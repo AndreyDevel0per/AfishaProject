@@ -27,6 +27,10 @@ export default function LoginPage() {
   }, [pathname]);
 
   const handleAutorisation = async () => {
+    if(!formValue.email || !formValue.password) {
+      return
+    }
+
     const res = await fetch("https://78e49fb1217fe058.mokky.dev/auth", {
       method: "POST",
       headers: {
@@ -50,9 +54,13 @@ export default function LoginPage() {
       dispatch(setEmail(json.data.email));
       dispatch(setId(json.data.id))
       result.innerText = 'Success!'
+      setFormValue({...formValue, email: '', password: ''})
+      // formValue.password = ''
       // jsonPre.innerText = JSON.stringify(json, null, 2);
     } else {
       result.innerText = 'Wrong email or password!'
+      setFormValue({...formValue, email: '', password: ''})
+      // setFormValue({...formValue, password: ''})
     }
   };
 
@@ -88,7 +96,7 @@ export default function LoginPage() {
           />
           <h2 id="result"> </h2>
           <div className="loginPage__button">
-            <Button onClick={handleAutorisation}>logIn</Button>
+            <Button onClick={handleAutorisation} disabled={formValue.email && formValue.password ? false: true}>logIn</Button>
           </div>
         </form>
       </div>

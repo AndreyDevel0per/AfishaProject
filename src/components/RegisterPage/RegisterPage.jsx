@@ -9,12 +9,18 @@ export default function RegisterPage() {
     password: "",
   });
 
+  const result = document.getElementById('result')
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(formValue);
   };
 
   const handleRegistration = async () => {
+    if(!formValue.fullName || !formValue.email || !formValue.password) {
+      return
+    }
+
     const res = await fetch("https://78e49fb1217fe058.mokky.dev/register", {
       method: "POST",
       headers: {
@@ -29,7 +35,8 @@ export default function RegisterPage() {
     });
     if (res.ok) {
       const json = await res.json();
-      console.log(json);
+      // console.log(json);
+      result.innerText = 'Success!'
       // jsonPre.innerText = JSON.stringify(json, null, 2);
     }
   };
@@ -70,8 +77,9 @@ export default function RegisterPage() {
             type="password"
           />
           {/* <button type='submit'>Submit</button> */}
+          <h2 id="result"> </h2>
           <div className="registerPage__button">
-            <Button onClick={handleRegistration}>Submit</Button>
+            <Button onClick={handleRegistration} disabled={formValue.fullName && formValue.email && formValue.password ? false : true}>Submit</Button>
           </div>
         </form>
       </div>

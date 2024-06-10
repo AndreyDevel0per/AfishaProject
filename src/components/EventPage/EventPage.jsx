@@ -1,5 +1,5 @@
 import "./EventPage.css";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "../Button/Button";
@@ -42,10 +42,10 @@ export default function EventPage({ calendar }) {
             )
             .then((res) => {
               if (res.data.length !== 0) {
-                setSignIn("In calendar");
+                setSignIn("Go to calendar");
               }
             });
-        } else console.log("login!");
+        } else setSignIn("You need to log in");
       });
   }, []);
 
@@ -78,10 +78,10 @@ export default function EventPage({ calendar }) {
                   time: `${event.time}`,
                   place: `${event.place}`,
                 });
-                setSignIn("In calendar");
-              } else setSignIn("In calendar");
+                setSignIn("Go to calendar");
+              } else setSignIn("Go to calendar");
             });
-        } else console.log("login!");
+        } else setSignIn("You need to log in");
       });
   };
 
@@ -110,7 +110,14 @@ export default function EventPage({ calendar }) {
               <span>{event.place}</span>
             </div>
             <div className="eventPage__button">
-              <Button onClick={addToCalendar}>{signIn}</Button>
+              <Link to={signIn === "Go to calendar" ? "/calendar" : null}>
+                <Button
+                  onClick={addToCalendar}
+                  disabled={signIn === "You need to log in" ? true : false}
+                >
+                  {signIn}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

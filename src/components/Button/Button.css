@@ -11,3 +11,8 @@
     background-color: #8813cc;
     transition: all 0.3s ease-in-out;
 }
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
