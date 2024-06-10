@@ -23,12 +23,10 @@ export default function FindSection() {
         if(category === 'Categories') {
             axios.get(`https://78e49fb1217fe058.mokky.dev/events`).then(res => {
             dispatch(setEvents(res.data))
-            console.log(res.data)
             })
         } else {
             axios.get(`https://78e49fb1217fe058.mokky.dev/events?category=${category}`).then(res => {
             dispatch(setEvents(res.data))
-            console.log(res.data)
             })
         }
     }
@@ -39,7 +37,7 @@ export default function FindSection() {
         <section className="findSection">
             <div className="findSectionContainer">
                 <div className="findSection__header">
-                    <h1>Найти мероприятия</h1>
+                    <h1>FIND EVENTS</h1>
                 </div>
                 <div className="findSection__filters">
                     <DropDown open = {open} setOpen={setOpen} buttonText={category} content={<>

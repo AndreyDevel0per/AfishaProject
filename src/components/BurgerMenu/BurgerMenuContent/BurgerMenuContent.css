@@ -2,6 +2,7 @@
     position: absolute;
     /* background: linear-gradient(#ff9277 50%, rgb(228, 18, 165), rgb(147, 66, 178) 83%, aqua); */
     background-image: linear-gradient(to bottom, #ff9277, #ff8575, #ff7776, #ff6878, #ff597c, #fa5ba0, #e965c2, #cc75e0, #7c99ff, #00b1fd, #00bfe1 99%, #4cc6be);
+    /* background-color: black; */
     top: 0px;
     width: 120%;
     height: 100vh;
@@ -29,6 +30,8 @@
     font-size: 30px;
     font-weight: 600;
     padding-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .burgerMenuContent__container {

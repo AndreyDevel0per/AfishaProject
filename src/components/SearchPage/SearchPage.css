@@ -1,0 +1,20 @@
+.searchPage {
+    margin-top: 70px;
+    min-height: 500px;
+}
+
+.searchPage h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(12, 12, 12);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.searchPage__container{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

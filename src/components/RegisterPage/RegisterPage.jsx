@@ -28,10 +28,10 @@ export default function RegisterPage() {
       }),
     });
     if (res.ok) {
-        const json = await res.json();
-        console.log(json);
-        // jsonPre.innerText = JSON.stringify(json, null, 2);
-      }
+      const json = await res.json();
+      console.log(json);
+      // jsonPre.innerText = JSON.stringify(json, null, 2);
+    }
   };
 
   const handleFullNameChange = (e) => {
@@ -48,26 +48,33 @@ export default function RegisterPage() {
 
   return (
     <div className="registerPage">
-      <span>Register</span>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={formValue.fullName}
-          onChange={handleFullNameChange}
-          type="text"
-        />
-        <input
-          value={formValue.email}
-          onChange={handleEmailChange}
-          type="text"
-        />
-        <input
-          value={formValue.password}
-          onChange={handlePasswordChange}
-          type="text"
-        />
-        {/* <button type='submit'>Submit</button> */}
-        <Button onClick={handleRegistration}>Submit</Button>
-      </form>
+      <div className="registerPage__container">
+        <h1>Register</h1>
+        <form onSubmit={handleSubmit} className="registerPage__input">
+          <h2>Name</h2>
+          <input
+            value={formValue.fullName}
+            onChange={handleFullNameChange}
+            type="text"
+          />
+          <h2>Email</h2>
+          <input
+            value={formValue.email}
+            onChange={handleEmailChange}
+            type="text"
+          />
+          <h2>Password</h2>
+          <input
+            value={formValue.password}
+            onChange={handlePasswordChange}
+            type="password"
+          />
+          {/* <button type='submit'>Submit</button> */}
+          <div className="registerPage__button">
+            <Button onClick={handleRegistration}>Submit</Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

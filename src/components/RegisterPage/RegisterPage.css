@@ -6,3 +6,40 @@
 .registerPage input {
     border: 1px black solid;
 }
+
+.registerPage__container {
+    width: 30%;
+    border: 1px black solid;
+    border-radius: 20px;
+    z-index: 100;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.registerPage input {
+    border: 1px black solid;
+    margin-bottom: 30px;
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    display: block;
+}
+
+.registerPage__container h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.registerPage__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerPage__button {
+    padding-top: 10px;
+}

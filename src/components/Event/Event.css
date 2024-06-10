@@ -1,20 +1,23 @@
 .event__img{
     max-width: 242px;
     max-height: 180px;
-    
 }
 
 .event {
     max-width: 242px;
     color: var(--grey);
+    padding: 30px 0;
 }
 
 .event__img img {
     object-fit: cover;
+    width: 242px;
+    max-height: 180px;
 }
 
 .event__text {
     max-width: 242px;
+    padding-top: 10px;
 }
 
 .event__category,

@@ -32,8 +32,8 @@ export default function Slider() {
       {
         img: card1,
         category: 'Sport',
-        name: 'Los Angeles Dodgers',
-        date: 'June 6'
+        name: 'LA Dodgers',
+        date: 'June 10'
       },
       {
         img: card2,

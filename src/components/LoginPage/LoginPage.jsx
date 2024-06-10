@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./LoginPage.css";
 import Button from "../Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { setToken, setEmail, setfullName } from "../../redux/tokenSlice";
+import { setToken, setEmail, setfullName, setId } from "../../redux/tokenSlice";
 import { Link, useLocation } from "react-router-dom";
 
 export default function LoginPage() {
@@ -44,9 +44,11 @@ export default function LoginPage() {
       localStorage.setItem("token", JSON.stringify(json.token));
       localStorage.setItem("fullName", json.data.fullName);
       localStorage.setItem("email", json.data.email);
+      localStorage.setItem("id", json.data.id);
       dispatch(setToken(json.token));
       dispatch(setfullName(json.data.fullName));
       dispatch(setEmail(json.data.email));
+      dispatch(setId(json.data.id))
       result.innerText = 'Success!'
       // jsonPre.innerText = JSON.stringify(json, null, 2);
     } else {
@@ -82,7 +84,7 @@ export default function LoginPage() {
           <input
             value={formValue.password}
             onChange={handlePasswordChange}
-            type="text"
+            type="password"
           />
           <h2 id="result"> </h2>
           <div className="loginPage__button">
@@ -93,5 +95,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-//(event) => setFormValue(event.target.value)

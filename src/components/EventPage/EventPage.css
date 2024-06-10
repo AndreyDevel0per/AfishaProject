@@ -33,3 +33,22 @@
 .eventPage__container {
     padding-left: 20px;
 }
+
+.eventPage__date span,
+.eventPage__place span{
+    padding-right: 15px;
+    border-bottom: 1px black solid;
+}
+
+.eventPage__date {
+    padding: 25px 0;
+    font-size: 20px;
+}
+
+.eventPage__place {
+    font-size: 20px;
+}
+
+.eventPage__button {
+    padding-top: 25px;
+}

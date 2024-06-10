@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   token: localStorage.getItem("token") || '',
   fullName: localStorage.getItem("fullName") || '',
-  email: localStorage.getItem("email") || ''
+  email: localStorage.getItem("email") || '',
+  id: localStorage.getItem("id") || '',
 };
 
 export const tokenSlice = createSlice({
@@ -18,10 +19,13 @@ export const tokenSlice = createSlice({
     },
     setEmail: (state, action) => {
         state.email = action.payload
-    }
+    },
+    setId: (state, action) => {
+      state.id = action.payload
+  },
   },
 });
 
-export const { setToken, setEmail, setfullName } = tokenSlice.actions
+export const { setToken, setEmail, setfullName, setId } = tokenSlice.actions
 
 export default tokenSlice.reducer

@@ -1,7 +1,13 @@
 .Button {
-    width: 115px;
+    min-width: 115px;
+    padding: 0 8px;
     height: 48px;
     background-color: #783A9C;
     color: var(--white);
     margin-bottom: 50px;
+}
+
+.Button:hover {
+    background-color: #8813cc;
+    transition: all 0.3s ease-in-out;
 }

@@ -2,7 +2,7 @@ import CarouselItem from '../CarouselItem/CarouselItem'
 import './Carousel.css'
 
 export default function Carousel() {
-    const items = ['1,000,000+ Visitors per year', '100+ artists', '200+ musicians', '20 countries represented', '365 days', '24 hours']
+    const items = ['1,000,000+ Visitors per year', '100+ artists', '200+ musicians', '20 countries represented', '365 days', '50+ sport events']
 
     return (
         <div className='carousel'>
